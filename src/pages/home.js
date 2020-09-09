@@ -42,20 +42,36 @@ class home extends Component {
               height="300px"
               legendToggle
             /> */}
-            
             <Chart
-              width={'1080px'}
-              height={'400px'}
-              chartType="Bar"
+              width={'auto'}
+              height={'300px'}
+              chartType="ColumnChart"
               loader={<div>Loading Chart</div>}
               data={[
-                ['Year', 'MINDEF', 'MINEDUC', 'MSPAS'],
-                ['2020', 3.64, 22.2, 10.6],
+                [
+                  'Element',
+                  'Density',
+                  { role: 'style' },
+                  {
+                    sourceColumn: 0,
+                    role: 'annotation',
+                    type: 'string',
+                    calc: 'stringify',
+                  },
+                ],
+                ['', 8.94, '#b87333', '3. MINDEF'],
+                ['', 19.3, 'gold', '1. MINEDUC'],
+                ['', 10.49, 'silver', '2. MSPAS'],
+
               ]}
               options={{
+
+                width: '70%',
+                height: '100%',
+                bar: { groupWidth: '100%' },
                 legend: { position: 'none' },
-                role: 'annotation'
               }}
+              // For tests
               rootProps={{ 'data-testid': '6' }}
             />
 
@@ -67,22 +83,25 @@ class home extends Component {
               data={[
                 [
                   { type: 'string', label: '' },
+                  { type: 'string', label: '' },
                   { type: 'number', label: '% presupuesto actual' },
                 ],
-                ['Ministerio de Agricultura Ganadería y alimentación', { v: 1.94, f: '1.94' }],
-                ['Ministerio de Cultura y Deportes', { v: 0.84, f: '0.84' }],
-                ['Ministerio de Defensa Nacional', { v: 3.64, f: '3.64' }],
-                ['Ministerio de Educación', { v: 22.24, f: '22.24' }],
-                ['Ministerio de Energía y Minas', { v: 0.11, f: '0.11' }],
-                ['Ministerio de Finanzas Publicas', { v: 0.51, f: '0.51' }],
-                ['Ministerio de Relaciones Exteriores', { v: 0.78, f: '0.78' }],
-                ['Ministerio de Salud Publica y Asistencia Social', { v: 10.64, f: '10.64' }],
-                ['Ministerio de Trabajo y Prevención Social', { v: 1.07, f: '1.07' }],
-                ['Universidad de San Carlos de Guatemala ', { v: 2.37, f: '2.37' }],
+                // [4,'Ministerio de Educación', { v: 22.24, f: '22.24' }],
+                // [8,'Ministerio de Salud Publica y Asistencia Social', { v: 10.64, f: '10.64' }],
+                // [55,'Ministerio de Defensa Nacional', { v: 3.64, f: '3.64' }],
+
+                [4, 'Universidad de San Carlos de Guatemala ', { v: 2.37, f: '2.37' }],
+                [5, 'Ministerio de Agricultura Ganadería y alimentación', { v: 1.94, f: '1.94' }],
+                [6, 'Ministerio de Trabajo y Prevención Social', { v: 1.07, f: '1.07' }],
+                [7, 'Ministerio de Cultura y Deportes', { v: 0.84, f: '0.84' }],
+                [8, 'Ministerio de Relaciones Exteriores', { v: 0.78, f: '0.78' }],
+                [9, 'Ministerio de Finanzas Publicas', { v: 0.51, f: '0.51' }],
+                [10, 'Ministerio de Energía y Minas', { v: 0.11, f: '0.11' }],
+
               ]}
               options={{
-                showRowNumber: true,
-                sortColumn: 1,
+                showRowNumber: false,
+                sortColumn: 2,
                 sortAscending: false,
                 width: '100%',
               }}
@@ -163,8 +182,8 @@ class home extends Component {
       <>
         <div className='col-12 col-md-12 m-5'>
           <div class='row'>
-          <div class='col-md-auto'>
-          </div>
+            <div class='col-md-auto'>
+            </div>
             <div class='col-3'>
               <h1>  Top de Ministerios </h1>
               <CardBody>
