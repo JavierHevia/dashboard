@@ -4,11 +4,11 @@ import '@trendmicro/react-sidenav/dist/react-sidenav.css'
 
 class Navbar extends React.Component {
 
-  render () {
+  render() {
     return (
       <SideNav
         onSelect={(selected) => {
-        // Add your code here
+          // Add your code here
         }}
       >
         <SideNav.Toggle />
@@ -25,33 +25,33 @@ class Navbar extends React.Component {
             <NavIcon>
               <a href='/ministerio/maga'><i className='fa fa-leaf' style={{ fontSize: '1.75em' }} /></a>
             </NavIcon>
-            <NavItem eventKey='charts/linechart'>
-              <NavText>
-                <a href='/ministerio/maga'> MAGA </a>
-              </NavText>
-            </NavItem>
+
+            <NavText>
+              <a href='/ministerio/maga'> MAGA </a>
+            </NavText>
+
           </NavItem>
 
           <NavItem eventKey='charts2'>
             <NavIcon>
               <a href='/ministerio/mcd'><i className='far fa-futbol' style={{ fontSize: '1.75em' }} /></a>
             </NavIcon>
-            <NavItem eventKey='charts/linechart'>
-              <NavText>
-                <a href='/ministerio/mcd'> MCD </a>
-              </NavText>
-            </NavItem>
+
+            <NavText>
+              <a href='/ministerio/mcd'> MCD </a>
+            </NavText>
+
           </NavItem>
 
           <NavItem eventKey='charts3'>
             <NavIcon>
               <a href='/ministerio/mindef'><i className='fas fa-shield-alt' style={{ fontSize: '1.75em' }} /></a>
             </NavIcon>
-            <NavItem eventKey='charts/linechart'>
-              <NavText>
-                <a href='/ministerio/mindef'> MINDEF </a>
-              </NavText>
-            </NavItem>
+
+            <NavText>
+              <a href='/ministerio/mindef'> MINDEF </a>
+            </NavText>
+
           </NavItem>
 
         </SideNav.Nav>
