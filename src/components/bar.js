@@ -3,8 +3,7 @@ import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/rea
 import '@trendmicro/react-sidenav/dist/react-sidenav.css'
 
 class Navbar extends React.Component {
-
-  render() {
+  render () {
     return (
       <SideNav
         onSelect={(selected) => {

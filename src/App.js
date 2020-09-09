@@ -41,17 +41,15 @@ class App extends Component {
   render() {
     return (
       <div>
+         <Navbar/>
         <BrowserRouter>
-          <div>
             {/* <Nav /> */}
-            <Navbar/>
             <Route exact path='/' component={Home} />
             <Route exact path='/who' component={Contact} />
             <Route exact path='/ministerio/maga' component={Maga} />
             <Route exact path='/ministerio/mcd' component={MCD} />
             <Route exact path='/ministerio/mindef' component={MINDEF} />
             {/* <Footer /> */}
-          </div>
         </BrowserRouter>
       </div>
     )

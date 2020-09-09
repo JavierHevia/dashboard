@@ -1,0 +1,5 @@
+sudo npm start
+
+sudo pm2 start run.sh
+
+sudo pm2 stop run.sh
