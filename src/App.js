@@ -5,10 +5,14 @@ import Route from 'react-router-dom/Route'
 // import Agregar from './pages/agregar'
 import Home from './pages/home'
 import Contact from './pages/contac'
+import Maga from './pages/MAGA'
+import MCD from './pages/MCD'
+import MINDEF from './pages/MINDEF'
 import { BrowserRouter } from 'react-router-dom'
 import Nav from './components/Navbar'
 import Footer from './components/Footer'
 import Loader from './components/Loader'
+import Navbar from './components/bar'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import 'bootstrap-css-only/css/bootstrap.min.css'
 import 'mdbreact/dist/css/mdb.css'
@@ -39,11 +43,14 @@ class App extends Component {
       <div>
         <BrowserRouter>
           <div>
-            <Nav />
+            {/* <Nav /> */}
+            <Navbar/>
             <Route exact path='/' component={Home} />
             <Route exact path='/who' component={Contact} />
-            <Footer />
-
+            <Route exact path='/ministerio/maga' component={Maga} />
+            <Route exact path='/ministerio/mcd' component={MCD} />
+            <Route exact path='/ministerio/mindef' component={MINDEF} />
+            {/* <Footer /> */}
           </div>
         </BrowserRouter>
       </div>
