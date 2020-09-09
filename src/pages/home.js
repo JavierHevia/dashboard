@@ -50,7 +50,7 @@ class home extends Component {
               data={[
                 [
                   'Element',
-                  'Density',
+                  'Porcentaje',
                   { role: 'style' },
                   {
                     sourceColumn: 0,
