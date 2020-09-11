@@ -18,8 +18,46 @@ import 'bootstrap-css-only/css/bootstrap.min.css'
 import 'mdbreact/dist/css/mdb.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/css/bootstrap.css'
+import Scroll from 'react-scroll';
+
+
+var Link = Scroll.Link;
+var DirectLink = Scroll.DirectLink;
+var Element = Scroll.Element;
+var Events = Scroll.Events;
+var scroll = Scroll.animateScroll;
+var scrollSpy = Scroll.scrollSpy;
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.scrollToTop = this.scrollToTop.bind(this);
+  }
+
+  componentDidMount() {
+
+    Events.scrollEvent.register('begin', function () {
+      console.log("begin", arguments);
+    });
+
+    Events.scrollEvent.register('end', function () {
+      console.log("end", arguments);
+    });
+
+    scrollSpy.update();
+
+  }
+
+  scrollToTop() {
+    scroll.scrollToTop();
+  }
+
+  componentWillUnmount() {
+    Events.scrollEvent.remove('begin');
+    Events.scrollEvent.remove('end');
+  }
+
   state = { loading: true };
   sleep = milliseconds => {
     return new Promise(resolve => setTimeout(resolve, milliseconds));
@@ -41,19 +79,25 @@ class App extends Component {
   render() {
     return (
       <div>
-         <Navbar/>
+        <Navbar />
         <BrowserRouter>
-            {/* <Nav /> */}
+          {/* <Nav /> */}
+          {/* <Element name="test7" className="element" style={{
+            position: 'relative',
+            height: '1090px',
+            overflow: 'scroll',
+            // marginBottom: '100px'
+          }}> */}
             <Route exact path='/' component={Home} />
             <Route exact path='/who' component={Contact} />
             <Route exact path='/ministerio/maga' component={Maga} />
             <Route exact path='/ministerio/mcd' component={MCD} />
             <Route exact path='/ministerio/mindef' component={MINDEF} />
-            {/* <Footer /> */}
+          {/* </Element> */}
+          {/* <Footer /> */}
         </BrowserRouter>
       </div>
     )
-
   }
 }
 

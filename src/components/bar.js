@@ -6,8 +6,14 @@ class Navbar extends React.Component {
   render () {
     return (
       <SideNav
-        onSelect={(selected) => {
+        onSelect={(selected, active) => {
           // Add your code here
+          // alert(selected)
+        }}
+        style={{
+          position: 'fixed',
+          // overflow: 'auto'
+          background: '#2196f3'
         }}
       >
         <SideNav.Toggle />
@@ -20,18 +26,16 @@ class Navbar extends React.Component {
               <a href='/'> Home </a>
             </NavText>
           </NavItem>
-          <NavItem eventKey='charts'>
+          <NavItem eventKey='MAGA'>
             <NavIcon>
               <a href='/ministerio/maga'><i className='fa fa-leaf' style={{ fontSize: '1.75em' }} /></a>
             </NavIcon>
-
             <NavText>
               <a href='/ministerio/maga'> MAGA </a>
             </NavText>
-
           </NavItem>
 
-          <NavItem eventKey='charts2'>
+          <NavItem eventKey='MCD'>
             <NavIcon>
               <a href='/ministerio/mcd'><i className='far fa-futbol' style={{ fontSize: '1.75em' }} /></a>
             </NavIcon>
@@ -42,7 +46,7 @@ class Navbar extends React.Component {
 
           </NavItem>
 
-          <NavItem eventKey='charts3'>
+          <NavItem eventKey='MINDEF'>
             <NavIcon>
               <a href='/ministerio/mindef'><i className='fas fa-shield-alt' style={{ fontSize: '1.75em' }} /></a>
             </NavIcon>

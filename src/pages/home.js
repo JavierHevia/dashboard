@@ -180,7 +180,7 @@ class home extends Component {
   render() {
     return (
       <>
-        <div className='col-12 col-md-12 m-5'>
+        <div className='col-11 col-md-11 m-5'>
           <div class='row'>
             <div class='col-md-auto'>
             </div>
@@ -196,12 +196,12 @@ class home extends Component {
           </div>
         </div>
 
-        <div className='col-12 col-md-11 m-5'>
+        <div className='col-11 col-md-11 m-5'>
           <div class='row'>
             <div class='col-8'>
               {/* <this.grap2/> */}
             </div>
-            <div class='col-4'>
+            <div class='col-3'>
               {/* <h1> Grafica 2 </h1> */}
             </div>
           </div>
